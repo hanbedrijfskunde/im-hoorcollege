@@ -2,8 +2,132 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<title>Hoorcollege Informatiemanagement</title>
-<meta http-equiv="refresh" content="0; url=hoorcollege-informatiemanagement-v2.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informatiemanagement · toets 6</title>
+<style>
+/* Huisstijl van het hoorcollege: zwart-wit met één schreeuwende kleur */
+:root {
+  --han: #E50056; --ink: #000000; --paper: #FFFFFF; --wash: #F2F2F0; --grijs: #454545;
+  --mens2: #FFE875; --extern: #6B21D9; --extern2: #E9DBFF; --goed: #0038FF; --goed2: #DCE4FF;
+  --bw: 3px; --sh: 5px 5px 0 var(--ink);
+  --f: "Avenir Next","Avenir","Nunito Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --fm: ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--wash); color: var(--ink); font: 18px/1.5 var(--f); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:where(a):focus-visible { outline: 4px solid var(--han); outline-offset: 3px; }
+.pagina { max-inline-size: 1120px; margin: 0 auto; padding: 0 16px 64px; }
+
+.mast { background: var(--han); color: var(--paper); border: var(--bw) solid var(--ink); box-shadow: 10px 10px 0 rgba(0,0,0,.22); margin: 32px 0 40px; padding: clamp(24px, 5vw, 52px); }
+.etiket { display: inline-block; background: var(--paper); color: var(--ink); font: 700 13px/1 var(--fm); letter-spacing: .16em; text-transform: uppercase; padding: 7px 12px 6px; }
+.mast h1 { font-size: clamp(36px, 7vw, 80px); line-height: .95; letter-spacing: -.03em; text-transform: uppercase; margin: 16px 0 0; font-weight: 800; }
+.mast p { font-size: clamp(18px, 2.4vw, 23px); font-weight: 600; max-inline-size: 52ch; margin: 18px 0 0; }
+
+h2 { display: inline-block; background: var(--ink); color: var(--paper); font: 700 13px/1 var(--fm); letter-spacing: .16em; text-transform: uppercase; padding: 8px 12px 7px; margin: 36px 0 16px; }
+
+.groot { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.klein { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+.kaart { display: flex; flex-direction: column; gap: 10px; background: var(--paper); border: var(--bw) solid var(--ink); border-top: 10px solid var(--kleur, var(--ink)); box-shadow: var(--sh); padding: 20px 22px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+.kaart:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.kaart .soort { font: 700 12px/1 var(--fm); letter-spacing: .14em; text-transform: uppercase; color: var(--grijs); }
+.kaart h3 { font-size: 26px; line-height: 1.1; margin: 0; font-weight: 800; letter-spacing: -.02em; }
+.kaart p { margin: 0; font-size: 17px; line-height: 1.45; }
+.kaart .naar { margin-top: auto; padding-top: 8px; font-weight: 800; }
+.kaart .naar::after { content: " →"; color: var(--han); }
+.slides { --kleur: var(--han); }
+.oefenen { --kleur: var(--goed); background: var(--goed2); }
+.klein .kaart h3 { font-size: 20px; }
+.klein .kaart { --kleur: var(--extern); }
+
+.toetsen { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.toetsen kbd { font: 700 13px/1 var(--fm); background: var(--wash); border: 2px solid var(--ink); padding: 4px 7px; }
+
+.stappen { counter-reset: stap; list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.stappen li { background: var(--mens2); border: var(--bw) solid var(--ink); padding: 16px 18px 16px 64px; position: relative; font-size: 17px; }
+.stappen li::before { counter-increment: stap; content: counter(stap); position: absolute; left: 16px; top: 14px; font: 800 30px/1 var(--f); }
+.stappen b { display: block; font-size: 19px; margin-bottom: 2px; }
+
+footer { margin-top: 44px; font-size: 15px; color: var(--grijs); }
+
+@media (prefers-reduced-motion: reduce) { .kaart { transition: none; } .kaart:hover { transform: none; } }
+</style>
 </head>
-<body><p><a href="hoorcollege-informatiemanagement-v2.html">Naar het hoorcollege Informatiemanagement</a></p></body>
+<body>
+<div class="pagina">
+  <header class="mast">
+    <span class="etiket">HBO Bedrijfskunde · THEO-IM · toets 6</span>
+    <h1>Informatie&shy;management</h1>
+    <p>Hier vind je de slides van het hoorcollege en een oefenmodule voor de toets.</p>
+  </header>
+
+  <main>
+    <h2>Begin hier</h2>
+    <div class="groot">
+      <a class="kaart slides" href="hoorcollege-informatiemanagement-v2.html">
+        <span class="soort">Hoorcollege</span>
+        <h3>De slides</h3>
+        <p>Vijf blokken theorie, één per toetsonderdeel, met Fashion Retail NL als casus en bij elk blok een oefenvraag. Aan het eind vier vragen over AI.</p>
+        <ul class="toetsen" aria-label="Sneltoetsen">
+          <li><kbd>→</kbd> <kbd>←</kbd> bladeren</li>
+          <li><kbd>O</kbd> overzicht</li>
+          <li><kbd>S</kbd> notities</li>
+        </ul>
+        <span class="naar">Open de slides</span>
+      </a>
+      <a class="kaart oefenen" href="oefenen/">
+        <span class="soort">Oefenmodule</span>
+        <h3>Oefenen voor de toets</h3>
+        <p>Kies het model, wijs in de casus het gegeven aan dat je antwoord draagt, en schrijf je antwoord. Voor die combinatie geeft de toets het volle punt. Daarna scoor je zelf met de rubric.</p>
+        <span class="naar">Open de oefenmodule</span>
+      </a>
+    </div>
+
+    <h2>Oefen per toetsonderdeel</h2>
+    <div class="klein">
+      <a class="kaart" href="oefenen/#/c5">
+        <span class="soort">Toetsonderdeel</span>
+        <h3>Modellen en raamwerken</h3>
+        <p>Henderson &amp; Venkatraman, Maes, Zachman, TOGAF</p>
+        <span class="naar">Oefenen</span>
+      </a>
+      <a class="kaart" href="oefenen/#/c6">
+        <span class="soort">Toetsonderdeel</span>
+        <h3>Informatie en waardecreatie</h3>
+        <p>Porter &amp; Millar, Porter &amp; Heppelmann</p>
+        <span class="naar">Oefenen</span>
+      </a>
+      <a class="kaart" href="oefenen/#/c7">
+        <span class="soort">Toetsonderdeel</span>
+        <h3>Governance en inrichting</h3>
+        <p>Laudon &amp; Laudon, ITIL</p>
+        <span class="naar">Oefenen</span>
+      </a>
+      <a class="kaart" href="oefenen/#/c8">
+        <span class="soort">Toetsonderdeel</span>
+        <h3>Sturen op informatie en data</h3>
+        <p>Laudon &amp; Laudon, Davenport, Kaplan &amp; Norton</p>
+        <span class="naar">Oefenen</span>
+      </a>
+      <a class="kaart" href="oefenen/#/c9">
+        <span class="soort">Toetsonderdeel</span>
+        <h3>Verandering en implementatie</h3>
+        <p>Markus, Davis, Venkatesh, de AI-verordening</p>
+        <span class="naar">Oefenen</span>
+      </a>
+    </div>
+
+    <h2>Zo bereid je je voor</h2>
+    <ol class="stappen">
+      <li><b>Lees de syllabus</b>De syllabus is de stof voor de toets. De slides ondersteunen het hoorcollege.</li>
+      <li><b>Bekijk de slides</b>Bij elk model staat een vraag uit Fashion Retail NL. Zo zie je waarvoor het model dient.</li>
+      <li><b>Oefen</b>Begin bij het toetsonderdeel waar je het minst zeker over bent. De module houdt bij wat je al gedaan hebt.</li>
+    </ol>
+  </main>
+
+  <footer>De oefenmodule groeit: per toetsonderdeel komen er oefeningen bij. De syllabus, de toetsmatrijs en de antwoordmodellen staan hier niet.</footer>
+</div>
+</body>
 </html>
